@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vyanjan/screens/tabs.dart';
 import 'package:vyanjan/screens/meals.dart';
+=======
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:vyanjan/screens/tabs.dart';
+>>>>>>> 50a6e4a (Initial commit)
 
 final theme = ThemeData(
   useMaterial3: true,
@@ -14,7 +20,11 @@ final theme = ThemeData(
 );
 
 void main() {
+<<<<<<< HEAD
   runApp(const App());
+=======
+  runApp(const ProviderScope(child: App()));
+>>>>>>> 50a6e4a (Initial commit)
 }
 
 class App extends StatelessWidget {

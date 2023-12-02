@@ -16,7 +16,7 @@ class MealItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(8)),
         clipBehavior: Clip.hardEdge,
       elevation: 2,
@@ -26,7 +26,9 @@ class MealItem extends StatelessWidget {
         },
         child: Stack(
           children: [
-            FadeInImage(placeholder: MemoryImage(kTransparentImage), image: NetworkImage(meal.imageUrl)),
+            Hero(
+              tag: meal.id,
+                child: FadeInImage(placeholder: MemoryImage(kTransparentImage), image: NetworkImage(meal.imageUrl))),
             Positioned(
                 bottom: 0,
                 right: 0,
@@ -42,7 +44,7 @@ class MealItem extends StatelessWidget {
                           maxLines: 2,
                           softWrap: true,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -50,19 +52,19 @@ class MealItem extends StatelessWidget {
                           ),
 
                       ),
-                      SizedBox(height: 12,),
+                      const SizedBox(height: 12,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           MealItemTrait(icon: Icons.schedule,
                               label: '${meal.duration} min'
                           ),
-                          SizedBox(width: 12,),
+                          const SizedBox(width: 12,),
                           MealItemTrait(
                               icon: Icons.work,
-                              label: '$complexityText',
+                              label: complexityText,
                           ),
-                          SizedBox(width: 12,),
+                          const SizedBox(width: 12,),
                           MealItemTrait(
                             icon: Icons.attach_money,
                             label: affordabilityText ,
